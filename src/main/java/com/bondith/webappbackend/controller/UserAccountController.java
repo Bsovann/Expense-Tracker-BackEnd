@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * The AppController class is a controller class that handles HTTP requests and returns responses.
  */
 @RestController
-public class AppController {
+public class UserAccountController {
 
     @GetMapping("/")
     public String index(HttpServletRequest req) {
