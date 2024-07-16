@@ -4,24 +4,21 @@ import com.bondith.webappbackend.model.User;
 import com.bondith.webappbackend.service.UserAccountService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
  * The AppController class is a controller class that handles HTTP requests and returns responses.
  */
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserAccountController {
 
     @Autowired
     public UserAccountService userAccountService;
 
-    @GetMapping("/")
-    public String home() {
-        return "Hello World";
+    @GetMapping("api/login")
+    public void login() {
     }
 
     @PostMapping("/register")
