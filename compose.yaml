@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - my-app
+
+  postgres:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_USER: bondith
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: myappDB
+    ports:
+      - "5342:5342"
+    networks:
+      - my-app
+    volumes:
+      - postgres-vol:/var/lib/postgresql/data
+
+networks:
+  my-app:
+    driver: bridge
+
+volumes:
+  postgres-vol:
